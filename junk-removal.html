@@ -191,6 +191,44 @@ footer{
 @media(max-width:800px){
   .footerGrid{grid-template-columns:1fr;}
 }
+
+/* --- MOBILE HEADER FIX (portrait phones) --- */
+@media (max-width: 600px){
+  .headerRow{
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .headerRow strong{
+    flex: 1 1 auto;
+    min-width: 160px;
+    font-size: 18px;
+    white-space: nowrap;
+  }
+
+  .phone{
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 10px 12px;
+    font-size: 16px;
+    border-radius: 14px;
+  }
+
+  nav{
+    order: 3;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+  }
+
+  nav a{
+    margin: 0;
+    font-size: 18px;
+    white-space: nowrap;
+  }
+}
 </style>
 </head>
 
@@ -322,3 +360,4 @@ footer{
 
 </body>
 </html>
+
