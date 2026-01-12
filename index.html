@@ -47,54 +47,6 @@ nav a{
 /* BANNER */
 .banner{
   position:relative;
-  height:380px;
-  background:#000;
-  overflow:hidden;
-}
-.banner img.bg{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  opacity:.85;
-}
-.banner .overlay{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    180deg,
-    rgba(0,0,0,.35),
-    rgba(0,0,0,.75)
-  );
-}
-
-/* HERO LOGO */
-.heroLogo{
-  position:absolute;
-  inset:0;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  z-index:3;
-}
-.heroLogo img{
-  height:350px;
-  width:auto;
-  max-width:90%;
-}
-.heroTagline{
-  margin-top:14px;
-  font-family:"Special Elite",cursive;
-  color:#fff;
-  font-size:22px;
-  letter-spacing:1px;
-  text-shadow:0 3px 10px rgba(0,0,0,.8);
-}
-
-/* BANNER */
-.banner{
-  position:relative;
   background:#000;
   overflow:hidden;
 
@@ -108,12 +60,32 @@ nav a{
 .banner img.bg{
   width:100%;
   height:100%;
-
-  /* shows the WHOLE bannerimage.png */
-  object-fit: contain;
+  object-fit: cover;         /* desktop/wide = full width */
   object-position: center;
-
   opacity:.85;
+}
+
+.banner .overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    180deg,
+    rgba(0,0,0,.35),
+    rgba(0,0,0,.75)
+  );
+}
+
+/* mobile/portrait = show the whole image */
+@media (max-width: 700px){
+  .banner img.bg{
+    object-fit: contain;
+  }
+  .heroLogo img{
+    height: 140px;
+  }
+  .heroTagline{
+    font-size: 16px;
+  }
 }
 
 /* HERO LOGO */
@@ -144,12 +116,6 @@ nav a{
   letter-spacing:1px;
   text-shadow:0 3px 10px rgba(0,0,0,.8);
 }
-  
-/*@media(max-width:700px){
-  .banner{height:300px;}
-  .heroLogo img{height:130px;}
-  .heroTagline{font-size:16px;}
-} */
 
 /* CONTENT */
 h2{
@@ -362,5 +328,6 @@ footer{
 
 </body>
 </html>
+
 
 
