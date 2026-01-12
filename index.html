@@ -92,11 +92,64 @@ nav a{
   text-shadow:0 3px 10px rgba(0,0,0,.8);
 }
 
-@media(max-width:700px){
+/* BANNER */
+.banner{
+  position:relative;
+  background:#000;
+  overflow:hidden;
+
+  /* responsive height: grows on big screens, shrinks on small */
+  height: clamp(220px, 35vw, 380px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.banner img.bg{
+  width:100%;
+  height:100%;
+
+  /* shows the WHOLE bannerimage.png */
+  object-fit: contain;
+  object-position: center;
+
+  opacity:.85;
+}
+
+/* HERO LOGO */
+.heroLogo{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  z-index:3;
+  padding: 12px;
+}
+
+.heroLogo img{
+  /* responsive logo size (desktop -> mobile) */
+  height: clamp(110px, 22vw, 320px);
+  width:auto;
+  max-width:90%;
+}
+
+.heroTagline{
+  margin-top:14px;
+  font-family:"Special Elite",cursive;
+  color:#fff;
+  font-size: clamp(14px, 2.4vw, 22px);
+  letter-spacing:1px;
+  text-shadow:0 3px 10px rgba(0,0,0,.8);
+}
+  
+/*@media(max-width:700px){
   .banner{height:300px;}
   .heroLogo img{height:130px;}
   .heroTagline{font-size:16px;}
-}
+} */
 
 /* CONTENT */
 h2{
@@ -309,4 +362,5 @@ footer{
 
 </body>
 </html>
+
 
