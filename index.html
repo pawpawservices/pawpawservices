@@ -9,6 +9,28 @@
 
 <style>
 
+/* Footer service limits fine print */
+.fineprint{
+  margin: 16px auto 0;          /* space above, centered */
+  padding-top: 14px;
+  border-top: 1px solid #222;
+
+  max-width: 1000px;            /* same visual width as wrap */
+  text-align: center;           /* center text */
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #cfcfcf;
+  opacity: 0.95;
+}
+
+@media (max-width: 700px){
+  .fineprint{
+    font-size: 12px;
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}
+
 /* Subtle, non-underlined footnote asterisk */
 .asterisk,
 .asterisk:visited,
@@ -404,7 +426,10 @@ footer{
     </div>
     <div>
      <div class="contactButtons">
+  <div class="contactButtons">
   <a class="phone" href="tel:18018200010">Call 801-820-0010</a>
+  <a class="textBtn" href="sms:18018200010">Text Us</a>
+</div>
   <a class="textBtn" href="sms:18018200010">Text Us</a>
 </div>
       Email: <a href="mailto:info@pawpawservices.com">info@pawpawservices.com</a>
@@ -424,6 +449,7 @@ footer{
 
 </body>
 </html>
+
 
 
 
