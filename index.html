@@ -8,6 +8,39 @@
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Play:wght@700&family=Special+Elite&display=swap" rel="stylesheet">
 
 <style>
+
+/* LOGO STRIP (above hero) */
+.logoStrip{
+  background:#000;
+  border-bottom:1px solid #333;
+  padding: 26px 0;
+}
+.logoStrip .logoWrap{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap: 10px;
+  text-align:center;
+}
+.logoStrip img{
+  width: min(320px, 85vw);
+  height: auto;
+}
+.logoStrip .tagline{
+  font-family:"Special Elite",cursive;
+  font-size: clamp(14px, 2.2vw, 20px);
+  letter-spacing: 1px;
+  color:#fff;
+  text-shadow:0 3px 10px rgba(0,0,0,.8);
+}
+
+/* tighten on phones */
+@media (max-width: 700px){
+  .logoStrip{ padding: 18px 0; }
+  .logoStrip img{ width: min(220px, 85vw); }
+}
+
 body{
   margin:0;
   font-family:"Open Sans",sans-serif;
@@ -247,15 +280,19 @@ footer{
   </div>
 </header>
 
+<!-- LOGO STRIP (above hero) -->
+<section class="logoStrip">
+  <div class="wrap logoWrap">
+    <img src="images/pawpaw-logo.png" alt="PAWPAW Services Logo">
+    <div class="tagline">Call PAWPAW — they fixed it for me.</div>
+  </div>
+</section>
+
 <!-- BANNER -->
 <section class="banner">
   <img class="bg" src="images/bannerimage.png">
   <div class="overlay"></div>
 
-  <div class="heroLogo">
-    <img src="images/pawpaw-logo.png" alt="PAWPAW Services Logo">
-    <div class="heroTagline">Call PAWPAW — they fixed it for me.</div>
-  </div>
 </section>
 
 <main class="wrap">
@@ -328,6 +365,7 @@ footer{
 
 </body>
 </html>
+
 
 
 
