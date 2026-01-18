@@ -12,8 +12,8 @@
 /* LOGO STRIP (above hero) */
 .logoStrip{
   background:#000;
-  border-bottom:1px solid #333;
-  padding: 26px 0;
+  padding: 12px 0 10px;   /* was 26px 0 */
+  border-bottom: 0;       /* remove the extra divider */
 }
 .logoStrip .logoWrap{
   display:flex;
@@ -79,12 +79,13 @@ nav a{
 
 /* BANNER */
 .banner{
+  margin-top: 0;
   position:relative;
   background:#000;
   overflow:hidden;
 
   /* responsive height: grows on big screens, shrinks on small */
-  height: clamp(220px, 35vw, 380px);
+  height: clamp(200px, 30vw, 340px);
   display:flex;
   align-items:center;
   justify-content:center;
@@ -369,6 +370,7 @@ footer{
 
 </body>
 </html>
+
 
 
 
