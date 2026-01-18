@@ -97,6 +97,30 @@ nav a{
   color:#fff;
 }
 
+/* Header call + text buttons */
+.contactButtons{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.textBtn{
+  border:2px solid #169199;
+  padding:8px 12px;
+  border-radius:10px;
+  font-weight:800;
+  text-decoration:none;
+  color:#169199;
+  background:transparent;
+  transition:background .2s ease, color .2s ease;
+}
+
+.textBtn:hover{
+  background:#169199;
+  color:#000;
+}
+
+
 /* BANNER */
 .banner{
   margin-top: 0;
@@ -322,8 +346,13 @@ footer{
   <h2><span class="accent">Reliable</span><br>PAWPAW Services</h2>
   <p>
     Handyman services, vehicle maintenance, power washing,
-    and junk removal or really anything around the home — practical solutions done right! Things your grandpa (PAWPAW) might do! Need a PAWPAW?
+    and junk removal — practical solutions done right!
   </p>
+
+    <p>
+    Service not listed? Ask PAWPAW! Call or Text 
+  </p>
+  
    <h2 class="accent">No Job Too Big Or Small <a class="asterisk" href="#service-limits">*</a></h2>
 </section>
 
@@ -374,7 +403,10 @@ footer{
       Riverton, UT
     </div>
     <div>
-      Phone: <a href="tel:18018200010">801-820-0010</a><br>
+     <div class="contactButtons">
+  <a class="phone" href="tel:18018200010">Call 801-820-0010</a>
+  <a class="textBtn" href="sms:18018200010">Text Us</a>
+</div>
       Email: <a href="mailto:info@pawpawservices.com">info@pawpawservices.com</a>
     </div>
     <div>
@@ -392,6 +424,7 @@ footer{
 
 </body>
 </html>
+
 
 
 
