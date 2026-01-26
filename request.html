@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PAWPAW Services | Request Information</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Play:wght@700&family=Special+Elite&display=swap" rel="stylesheet">
+
+  <!-- Shared site styles -->
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    /* Page-only form styling (keeps your existing brand look) */
+    .formCard{
+      border:1px solid #333;
+      border-radius:18px;
+      background:#0b0b0b;
+      box-shadow:0 12px 30px rgba(0,0,0,.6);
+      padding:18px;
+      margin: 22px auto 0;
+      max-width: 900px;
+    }
+
+    .formGrid{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:14px;
+      margin-top: 14px;
+    }
+
+    @media (max-width: 750px){
+      .formGrid{ grid-template-columns: 1fr; }
+    }
+
+    label{
+      display:block;
+      font-weight:700;
+      margin-bottom:6px;
+      color:#fff;
+    }
+
+    .hint{
+      font-size:12px;
+      color:#cfcfcf;
+      opacity:.95;
+      margin-top:6px;
+    }
+
+    input, select, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:12px;
+      border:1px solid #333;
+      background:#000;
+      color:#fff;
+      outline:none;
+      font-family:"Open Sans",sans-serif;
+      box-sizing:border-box;
+    }
+
+    input:focus, select:focus, textarea:focus{
+      border-color:#169199;
+      box-shadow: 0 0 0 2px rgba(22,145,153,.25);
+    }
+
+    textarea{
+      min-height: 220px;
+      resize: vertical;
+      line-height: 1.5;
+    }
+
+    .full{
+      grid-column: 1 / -1;
+    }
+
+    .radioRow{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+      padding:10px 0 0;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      border:1px solid #333;
+      border-radius:999px;
+      padding:10px 12px;
+      background:#000;
+      cursor:pointer;
+      user-select:none;
+    }
+
+    .pill input{
+      width:auto;
+      margin:0;
+      accent-color:#169199;
+    }
+
+    .actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:flex-start;
+      margin-top: 16px;
+    }
+
+    .submitBtn{
+      border:2px solid #169199;
+      padding:12px 16px;
+      border-radius:12px;
+      font-weight:800;
+      text-decoration:none;
+      color:#169199;
+      background:transparent;
+      transition:background .2s ease, color .2s ease;
+      cursor:pointer;
+    }
+
+    .submitBtn:hover{
+      background:#169199;
+      color:#000;
+    }
+
+    .wordCount{
+      font-size: 12px;
+      color:#cfcfcf;
+      opacity:.95;
+    }
+
+    .error{
+      color:#ffb3b3;
+      font-size: 13px;
+      margin-top: 10px;
+      display:none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Load shared header -->
+  <div id="site-header"></div>
+
+  <main class="wrap section">
+    <section class="center">
+      <h2><span class="accent">Request</span><br>Information</h2>
+      <p>
+        Fill this out and we’ll get back to you ASAP.
+      </p>
+    </section>
+
+    <section class="formCard">
+      <!-- Formspree endpoint goes in action="" -->
+      <form id="infoForm"
+            action="https://formspree.io/f/XXXXYYYY"
+            method="POST">
+
+        <!-- Subject line for the email -->
+        <input type="hidden" name="_subject" value="NEW REQUEST FOR INFORMATION">
+
+        <!-- Where replies should go (optional but helpful) -->
+        <input type="hidden" name="_replyto" value="">
+
+        <div class="formGrid">
+
+          <div>
+            <label for="firstName">First name *</label>
+            <input id="firstName" name="first_name" type="text" required autocomplete="given-name">
+          </div>
+
+          <div>
+            <label for="lastName">Last name *</label>
+            <input id="lastName" name="last_name" type="text" required autocomplete="family-name">
+          </div>
+
+          <div class="full">
+            <label for="address">Address (optional)</label>
+            <input id="address" name="address" type="text" autocomplete="street-address" placeholder="Street address">
+          </div>
+
+          <div>
+            <label for="phone">Phone *</label>
+            <input id="phone" name="phone" type="tel" required autocomplete="tel" placeholder="801-555-1234">
+          </div>
+
+          <div>
+            <label for="cell">Cell *</label>
+            <input id="cell" name="cell" type="tel" required autocomplete="tel" placeholder="801-555-1234">
+          </div>
+
+          <div class="full">
+            <label>Text OK? *</label>
+            <div class="radioRow">
+              <label class="pill">
+                <input type="radio" name="text_ok" value="Yes" required>
+                Yes
+              </label>
+              <label class="pill">
+                <input type="radio" name="text_ok" value="No" required>
+                No
+              </label>
+            </div>
+            <div class="hint">We’ll only text if you say yes.</div>
+          </div>
+
+          <div>
+            <label for="city">City *</label>
+            <input id="city" name="city" type="text" required autocomplete="address-level2">
+          </div>
+
+          <div>
+            <label for="state">State *</label>
+            <input id="state" name="state" type="text" required autocomplete="address-level1" placeholder="UT">
+          </div>
+
+          <div>
+            <label for="zip">Zip *</label>
+            <input id="zip" name="zip" type="text" required autocomplete="postal-code">
+          </div>
+
+          <div class="full">
+            <label for="notes">Notes (required, max 5000 words) *</label>
+            <textarea id="notes" name="notes" required></textarea>
+            <div class="hint">
+              Include what you need done, photos/links (if any), and best times to contact you.
+            </div>
+            <div class="wordCount" id="wordCount">0 / 5000 words</div>
+            <div class="error" id="wordError">Please keep notes to 5000 words or less.</div>
+          </div>
+
+        </div>
+
+        <div class="actions">
+          <button class="submitBtn" type="submit">Submit Request</button>
+          <div class="hint">This sends to: info@pawpawservices.com</div>
+        </div>
+
+      </form>
+    </section>
+  </main>
+
+  <!-- Load shared footer -->
+  <div id="site-footer"></div>
+
+  <script>
+    // Simple "include" loader for shared header/footer
+    async function loadPartial(targetId, url){
+      try{
+        const res = await fetch(url, { cache: "no-cache" });
+        document.getElementById(targetId).innerHTML = await res.text();
+      }catch(e){
+        // Fails silently if not found; you can console.log(e) during dev if needed
+      }
+    }
+    loadPartial("site-header", "/partials/header.html");
+    loadPartial("site-footer", "/partials/footer.html");
+
+    // Enforce 5000-word limit for notes
+    const notes = document.getElementById("notes");
+    const countEl = document.getElementById("wordCount");
+    const errorEl = document.getElementById("wordError");
+    const form = document.getElementById("infoForm");
+
+    function wordCount(text){
+      const words = text.trim().match(/\S+/g);
+      return words ? words.length : 0;
+    }
+
+    function updateCount(){
+      const n = wordCount(notes.value);
+      countEl.textContent = `${n} / 5000 words`;
+      const tooLong = n > 5000;
+      errorEl.style.display = tooLong ? "block" : "none";
+      return !tooLong;
+    }
+
+    notes.addEventListener("input", updateCount);
+
+    form.addEventListener("submit", (e) => {
+      if(!updateCount()){
+        e.preventDefault();
+        notes.focus();
+      }
+    });
+  </script>
+
+</body>
+</html>
