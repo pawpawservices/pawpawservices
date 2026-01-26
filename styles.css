@@ -523,3 +523,27 @@ footer{
   background:#169199;
   color:#000;
 }
+
+/* --- HOMEPAGE BANNER DESKTOP FIX: keep faces in frame --- */
+
+/* Default: don’t crop the faces off */
+.banner img.bg{
+  object-position: center 35%; /* move the "focus" a bit upward (tweak 25–45%) */
+}
+
+/* Very wide screens need a slightly different focal point */
+@media (min-width: 1100px){
+  .banner img.bg{
+    object-position: center 30%;
+  }
+}
+
+/* Ultra-wide screens (optional, but helps if it still chops) */
+@media (min-width: 1600px){
+  .banner{
+    height: clamp(240px, 28vw, 420px); /* a bit taller on huge screens */
+  }
+  .banner img.bg{
+    object-position: center 28%;
+  }
+}
