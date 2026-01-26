@@ -6,260 +6,16 @@
 <title>Handyman Services | PAWPAW Services</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Play:wght@700&family=Special+Elite&display=swap" rel="stylesheet">
-
-<style>
-body{
-  margin:0;
-  font-family:"Open Sans",sans-serif;
-  color:#ffffff;
-  background:#000000;
-}
-.wrap{max-width:1000px;margin:0 auto;padding:0 16px;}
-.center{text-align:center}
-a{color:inherit}
-
-/* HEADER */
-header{
-  border-bottom:1px solid #333;
-  background:#000;
-}
-.headerRow{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:12px 0;
-}
-nav a{
-  margin:0 10px;
-  font-family:"Play",sans-serif;
-  text-decoration:none;
-  color:#fff;
-}
-nav a.active{
-  color:#169199;
-}
-.phone{
-  border:2px solid #fff;
-  padding:8px 12px;
-  border-radius:10px;
-  font-weight:800;
-  text-decoration:none;
-  color:#fff;
-}
-
-/* HERO */
-.banner{
-  position:relative;
-  height:260px;
-  background:#000;
-  overflow:hidden;
-}
-.banner img.bg{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  opacity:.75;
-}
-.banner .overlay{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    180deg,
-    rgba(0,0,0,.35),
-    rgba(0,0,0,.85)
-  );
-}
-.heroText{
-  position:absolute;
-  inset:0;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  z-index:3;
-  padding:0 16px;
-}
-.heroText h1{
-  margin:0;
-  font-family:"Play",sans-serif;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  font-size:34px;
-}
-.heroText p{
-  margin:10px 0 0;
-  font-family:"Special Elite",cursive;
-  font-size:18px;
-  color:#fff;
-  text-shadow:0 3px 10px rgba(0,0,0,.8);
-}
-.accent{color:#169199}
-
-@media(max-width:700px){
-  .banner{height:220px;}
-  .heroText h1{font-size:26px;}
-  .heroText p{font-size:16px;}
-}
-
-/* CONTENT */
-.section{padding:30px 0}
-h2{
-  font-family:"Play",sans-serif;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  color:#fff;
-}
-
-/* CARDS */
-.cards{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:20px;
-}
-.card{
-  border:1px solid #333;
-  border-radius:18px;
-  padding:18px;
-  background:#0b0b0b;
-  box-shadow:0 12px 30px rgba(0,0,0,.6);
-}
-.card h3{
-  margin:0 0 10px;
-  font-family:"Play",sans-serif;
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
-.card ul{
-  margin:0;
-  padding-left:18px;
-  color:#ddd;
-}
-.card li{margin:8px 0}
-
-@media(max-width:750px){
-  .cards{grid-template-columns:1fr;}
-}
-
-/* GALLERY */
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:14px;
-}
-.gallery img{
-  width:100%;
-  height:140px;
-  object-fit:cover;
-  border-radius:14px;
-  border:1px solid #222;
-}
-@media(max-width:900px){
-  .gallery{grid-template-columns:repeat(2,1fr);}
-}
-@media(max-width:600px){
-  .gallery{grid-template-columns:1fr;}
-  .gallery img{height:180px;}
-}
-
-/* CTA */
-.cta{
-  border:1px solid #333;
-  border-radius:18px;
-  padding:20px;
-  background:linear-gradient(180deg,#0b0b0b,#050505);
-  text-align:center;
-}
-.cta a.btn{
-  display:inline-block;
-  margin-top:12px;
-  padding:12px 16px;
-  border-radius:12px;
-  text-decoration:none;
-  font-weight:800;
-  border:2px solid #169199;
-  color:#fff;
-}
-.cta a.btn:hover{
-  background:#169199;
-  color:#000;
-}
-
-/* FOOTER */
-footer{
-  border-top:1px solid #333;
-  padding:26px 0;
-  margin-top:40px;
-  background:#000;
-}
-.footerGrid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
-  color:#fff;
-}
-.footerGrid a{color:#fff}
-@media(max-width:800px){
-  .footerGrid{grid-template-columns:1fr;}
-}
-
-/* --- MOBILE HEADER FIX (portrait phones) --- */
-@media (max-width: 600px){
-  .headerRow{
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 10px 0;
-  }
-
-  .headerRow strong{
-    flex: 1 1 auto;
-    min-width: 160px;
-    font-size: 18px;
-    white-space: nowrap;
-  }
-
-  .phone{
-    flex: 0 0 auto;
-    white-space: nowrap;
-    padding: 10px 12px;
-    font-size: 16px;
-    border-radius: 14px;
-  }
-
-  nav{
-    order: 3;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 18px;
-  }
-
-  nav a{
-    margin: 0;
-    font-size: 18px;
-    white-space: nowrap;
-  }
-}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<header>
-  <div class="wrap headerRow">
-    <strong style="font-family:Play">PAWPAW Services</strong>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="index.html#services" class="active">Services</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <a class="phone" href="tel:18018200010">801-820-0010</a>
-  </div>
-</header>
+<!-- Shared header inject -->
+<div id="site-header"></div>
 
 <!-- HERO / BANNER -->
 <section class="banner">
-  <!-- Use ANY handyman-related image you want here -->
   <img class="bg" src="images/handyman-hero.jpg" alt="Handyman Services">
   <div class="overlay"></div>
 
@@ -284,25 +40,24 @@ footer{
   <div class="cards">
 
     <div class="card">
-      <h3><span class="accent">Repairs</span> & Fixes</h3>
+      <h3><span class="accent">Repairs</span> &amp; Fixes</h3>
       <ul>
         <li>Doors that stick / don’t latch</li>
-        <li>Drywall patching & small holes</li>
-        <li>Trim fixes & touch-ups</li>
+        <li>Drywall patching &amp; small holes</li>
+        <li>Trim fixes &amp; touch-ups</li>
         <li>Loose handles, hinges, hardware</li>
         <li>Minor fence / gate adjustments</li>
       </ul>
     </div>
 
     <div class="card">
-      <h3><span class="accent">Installs</span> & Replacements</h3>
+      <h3><span class="accent">Installs</span> &amp; Replacements</h3>
       <ul>
-        <li>Remove & replace existing fixtures and equipment</li>
+        <li>Remove &amp; replace existing fixtures and equipment</li>
         <li>Like-for-like fixture and appliance replacements</li>
         <li>Plumbing connections related to existing fixtures</li>
-        <li>Bathroom accessories & shelves</li>
+        <li>Bathroom accessories &amp; shelves</li>
         <li>Wall-mounted installs (TVs, shelves, brackets)</li>
-        
       </ul>
     </div>
 
@@ -321,9 +76,9 @@ footer{
       <h3><span class="accent">Interior</span> Finishing</h3>
       <ul>
         <li>Baseboard / trim install (small areas)</li>
-        <li>Caulking & sealing</li>
+        <li>Caulking &amp; sealing</li>
         <li>Weather stripping</li>
-        <li>Hanging mirrors & pictures</li>
+        <li>Hanging mirrors &amp; pictures</li>
         <li>Minor cabinet adjustments</li>
       </ul>
     </div>
@@ -361,28 +116,9 @@ footer{
 
 </main>
 
-<footer id="contact">
-  <div class="wrap footerGrid">
-    <div>
-      <strong>PAWPAW Services</strong><br>
-      Riverton, UT
-    </div>
-    <div>
-      Phone: <a href="tel:18018200010">801-820-0010</a><br>
-      Email: <a href="mailto:info@pawpawservices.com">info@pawpawservices.com</a>
-    </div>
-    <div>
-      Mon–Fri: 8am–5pm<br>
-      Sat: By appointment
-    </div>
-  </div>
-</footer>
+<!-- Shared footer inject -->
+<div id="site-footer"></div>
 
+<script src="includes.js"></script>
 </body>
 </html>
-
-
-
-
-
-
