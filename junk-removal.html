@@ -6,249 +6,16 @@
 <title>Junk Removal | PAWPAW Services</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Play:wght@700&family=Special+Elite&display=swap" rel="stylesheet">
-
-<style>
-body{
-  margin:0;
-  font-family:"Open Sans",sans-serif;
-  color:#ffffff;
-  background:#000000;
-}
-.wrap{max-width:1000px;margin:0 auto;padding:0 16px;}
-.center{text-align:center}
-a{color:inherit}
-
-/* HEADER */
-header{
-  border-bottom:1px solid #333;
-  background:#000;
-}
-.headerRow{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:12px 0;
-}
-nav a{
-  margin:0 10px;
-  font-family:"Play",sans-serif;
-  text-decoration:none;
-  color:#fff;
-}
-nav a.active{
-  color:#169199;
-}
-.phone{
-  border:2px solid #fff;
-  padding:8px 12px;
-  border-radius:10px;
-  font-weight:800;
-  text-decoration:none;
-  color:#fff;
-}
-
-/* HERO */
-.banner{
-  position:relative;
-  height:260px;
-  background:#000;
-  overflow:hidden;
-}
-.banner img.bg{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  opacity:.75;
-}
-.banner .overlay{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    180deg,
-    rgba(0,0,0,.35),
-    rgba(0,0,0,.85)
-  );
-}
-.heroText{
-  position:absolute;
-  inset:0;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  text-align:center;
-  z-index:3;
-  padding:0 16px;
-}
-.heroText h1{
-  margin:0;
-  font-family:"Play",sans-serif;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  font-size:34px;
-}
-.heroText p{
-  margin:10px 0 0;
-  font-family:"Special Elite",cursive;
-  font-size:18px;
-  color:#fff;
-  text-shadow:0 3px 10px rgba(0,0,0,.8);
-}
-.accent{color:#169199}
-
-@media(max-width:700px){
-  .banner{height:220px;}
-  .heroText h1{font-size:26px;}
-  .heroText p{font-size:16px;}
-}
-
-/* CONTENT */
-.section{padding:30px 0}
-h2{
-  font-family:"Play",sans-serif;
-  letter-spacing:3px;
-  text-transform:uppercase;
-  color:#fff;
-}
-
-/* CARDS */
-.cards{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:20px;
-}
-.card{
-  border:1px solid #333;
-  border-radius:18px;
-  padding:18px;
-  background:#0b0b0b;
-  box-shadow:0 12px 30px rgba(0,0,0,.6);
-}
-.card h3{
-  margin:0 0 10px;
-  font-family:"Play",sans-serif;
-  letter-spacing:2px;
-  text-transform:uppercase;
-}
-.card ul{
-  margin:0;
-  padding-left:18px;
-  color:#ddd;
-}
-.card li{margin:8px 0}
-
-@media(max-width:750px){
-  .cards{grid-template-columns:1fr;}
-}
-
-/* PRICING STRIP */
-.pricingStrip{
-  border:1px solid #333;
-  border-radius:18px;
-  padding:18px;
-  background:#070707;
-  color:#ddd;
-}
-.pricingStrip strong{color:#fff}
-
-/* CTA */
-.cta{
-  border:1px solid #333;
-  border-radius:18px;
-  padding:20px;
-  background:linear-gradient(180deg,#0b0b0b,#050505);
-  text-align:center;
-}
-.cta a.btn{
-  display:inline-block;
-  margin-top:12px;
-  padding:12px 16px;
-  border-radius:12px;
-  text-decoration:none;
-  font-weight:800;
-  border:2px solid #169199;
-  color:#fff;
-}
-.cta a.btn:hover{
-  background:#169199;
-  color:#000;
-}
-
-/* FOOTER */
-footer{
-  border-top:1px solid #333;
-  padding:26px 0;
-  margin-top:40px;
-  background:#000;
-}
-.footerGrid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
-  color:#fff;
-}
-.footerGrid a{color:#fff}
-@media(max-width:800px){
-  .footerGrid{grid-template-columns:1fr;}
-}
-
-/* --- MOBILE HEADER FIX (portrait phones) --- */
-@media (max-width: 600px){
-  .headerRow{
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 10px 0;
-  }
-
-  .headerRow strong{
-    flex: 1 1 auto;
-    min-width: 160px;
-    font-size: 18px;
-    white-space: nowrap;
-  }
-
-  .phone{
-    flex: 0 0 auto;
-    white-space: nowrap;
-    padding: 10px 12px;
-    font-size: 16px;
-    border-radius: 14px;
-  }
-
-  nav{
-    order: 3;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 18px;
-  }
-
-  nav a{
-    margin: 0;
-    font-size: 18px;
-    white-space: nowrap;
-  }
-}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
-<header>
-  <div class="wrap headerRow">
-    <strong style="font-family:Play">PAWPAW Services</strong>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="index.html#services" class="active">Services</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <a class="phone" href="tel:18018200010">801-820-0010</a>
-  </div>
-</header>
+<!-- Shared header inject -->
+<div id="site-header"></div>
 
 <!-- HERO / BANNER -->
 <section class="banner">
-  <!-- Use ANY junk removal image you want here -->
   <img class="bg" src="images/junk-hero.jpg" alt="Junk Removal">
   <div class="overlay"></div>
 
@@ -274,8 +41,8 @@ footer{
     <div class="card">
       <h3><span class="accent">Home</span> Cleanouts</h3>
       <ul>
-        <li>Garage & shed cleanouts</li>
-        <li>Basement & attic cleanouts</li>
+        <li>Garage &amp; shed cleanouts</li>
+        <li>Basement &amp; attic cleanouts</li>
         <li>Move-out junk pickup</li>
         <li>Rental turnovers</li>
         <li>Storage unit cleanouts</li>
@@ -283,18 +50,18 @@ footer{
     </div>
 
     <div class="card">
-      <h3><span class="accent">Furniture</span> & Bulky Items</h3>
+      <h3><span class="accent">Furniture</span> &amp; Bulky Items</h3>
       <ul>
         <li>Couches, chairs, mattresses</li>
         <li>Dressers, desks, shelving</li>
         <li>Appliances (basic pickup)</li>
         <li>Old grills / patio sets</li>
-        <li>Carpet & pad (small pulls)</li>
+        <li>Carpet &amp; pad (small pulls)</li>
       </ul>
     </div>
 
     <div class="card">
-      <h3><span class="accent">Yard</span> & Outdoor</h3>
+      <h3><span class="accent">Yard</span> &amp; Outdoor</h3>
       <ul>
         <li>Bagged yard waste</li>
         <li>Storm debris (branches, limbs)</li>
@@ -341,19 +108,9 @@ footer{
 
 </main>
 
-<div id="footer"></div>
+<!-- Shared footer inject -->
+<div id="site-footer"></div>
 
-<script>
-  fetch("footer.html")
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById("footer").innerHTML = html;
-    });
-</script>
-
+<script src="includes.js"></script>
 </body>
 </html>
-
-
-
-
