@@ -1,16 +1,31 @@
 <header>
   <div class="wrap headerRow">
-    <strong style="font-family:Play">PAWPAW Services</strong>
 
-    <nav>
+    <!-- Left: business name (desktop left, mobile centered) -->
+    <a class="brand" href="index.html" aria-label="PAWPAW Services Home">
+      <strong style="font-family:Play">PAWPAW Services</strong>
+    </a>
+
+    <!-- Center: nav (desktop centered, mobile moves below) -->
+    <nav class="mainNav" aria-label="Primary">
       <a href="index.html">Home</a>
       <a href="index.html#services">Services</a>
+      <a href="about.html">About</a>
       <a href="#contact">Contact</a>
     </nav>
 
-    <div class="contactButtons">
+    <!-- Right: call + text (desktop right, mobile centered) -->
+    <div class="contactButtons headerButtons">
       <a class="phone" href="tel:18018200010">Call 801-820-0010</a>
-      <a class="textBtn" href="sms:18018200010">Text Us</a>
+
+      <!-- Pre-filled SMS -->
+      <a
+        class="textBtn"
+        href="sms:18018200010?&body=Hi!%20I%E2%80%99m%20looking%20for%20help%20with%20a%20project.%0AService%20needed:%0ACity/Zip:%0ATimeline:"
+      >
+        Text Us
+      </a>
     </div>
+
   </div>
 </header>
