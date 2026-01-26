@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>PAWPAW Services | Handyman • Vehicle • Power Washing • Junk Removal</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Play:wght@700&family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<div id="site-header"></div>
+
+<!-- LOGO STRIP (above hero) -->
+<section class="logoStrip">
+  <div class="wrap logoWrap">
+    <img src="images/pawpaw-logo.png" alt="PAWPAW Services Logo">
+    <div class="tagline">Call PAWPAW — they fixed it for me.</div>
+  </div>
+</section>
+
+<!-- BANNER -->
+<section class="banner">
+  <img class="bg" src="images/bannerimage.png">
+  <div class="overlay"></div>
+</section>
+
+<main class="wrap">
+
+<section class="section center">
+  <h2><span class="accent">Reliable</span><br>PAWPAW Services</h2>
+  <p>
+    Handyman services, vehicle maintenance, power washing,
+    and junk removal — practical solutions done right!
+  </p>
+
+  <p>
+    Service not listed? Ask PAWPAW! 
+  </p>
+  
+  <h2 class="accent">No Job Too Big Or Small <a class="asterisk" href="#service-limits">*</a></h2>
+</section>
+
+<section id="services" class="section">
+  <div class="services">
+
+    <a class="serviceLink" href="handyman.html">
+      <div class="service">
+        <img src="images/handyman.jpg" alt="Handyman Services">
+        <h3><span class="accent">Handyman</span><br>Services</h3>
+        <p>Doors, drywall, fixtures, trim, punch lists.</p>
+      </div>
+    </a>
+
+    <a class="serviceLink" href="yardwork.html">
+      <div class="service">
+        <img src="images/yard.png" alt="Yardwork">
+        <h3><span class="accent">Yardwork</span><br>Services</h3>
+        <p>Mowing, trimming, leaves, garden bed.</p>
+      </div>
+    </a>
+
+    <a class="serviceLink" href="power-washing.html">
+      <div class="service">
+        <img src="images/power-washing.jpg" alt="Power Washing">
+        <h3><span class="accent">Power</span><br>Washing</h3>
+        <p>Driveways, siding, patios, fences.</p>
+      </div>
+    </a>
+
+    <a class="serviceLink" href="junk-removal.html">
+      <div class="service">
+        <img src="images/junk.jpg" alt="Junk Removal">
+        <h3><span class="accent">Junk</span><br>Removal</h3>
+        <p>Cleanouts, haul-offs, bulky items.</p>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+</main>
+
+<div id="site-footer"></div>
+
+<script src="includes.js"></script>
+</body>
+</html>

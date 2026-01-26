@@ -1,0 +1,355 @@
+/* Footer service limits fine print (NEW: separate line + text so spacing always works) */
+.fineprintWrap{
+  margin: 22px auto 0;          /* space ABOVE the divider line */
+  max-width: 1000px;            /* same visual width as wrap */
+  text-align: center;
+  color: #cfcfcf;
+  opacity: 0.95;
+}
+
+.fineprintRule{
+  border-top: 1px solid #222;   /* the divider line */
+}
+
+.fineprintText{
+  margin-top: 18px;             /* <-- SPACE AFTER THE LINE before the text */
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+@media (max-width: 700px){
+  .fineprintWrap{
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+  .fineprintText{
+    font-size: 12px;
+  }
+}
+
+/* Subtle, non-underlined footnote asterisk */
+.asterisk,
+.asterisk:visited,
+.asterisk:hover,
+.asterisk:active{
+  text-decoration: none !important; /* kills underline everywhere */
+  font-weight: 500;
+  font-size: 0.6em;                 /* much smaller */
+  margin-left: 4px;
+  position: relative;
+  top: -0.65em;                     /* superscript feel */
+  opacity: 0.7;
+  color: inherit;                   /* same color as text */
+}
+
+/* LOGO STRIP (above hero) */
+.logoStrip{
+  background:#000;
+  padding: 12px 0 10px;   /* was 26px 0 */
+  border-bottom: 0;       /* remove the extra divider */
+}
+
+.logoStrip{
+  border-bottom: 1px solid #222;
+}
+  
+.logoStrip .logoWrap{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap: 10px;
+  text-align:center;
+}
+.logoStrip img{
+  width: min(320px, 85vw);
+  height: auto;
+}
+.logoStrip .tagline{
+  font-family:"Special Elite",cursive;
+  font-size: clamp(14px, 2.2vw, 20px);
+  letter-spacing: 1px;
+  color:#fff;
+  text-shadow:0 3px 10px rgba(0,0,0,.8);
+}
+
+/* tighten on phones */
+@media (max-width: 700px){
+  .logoStrip{ padding: 18px 0; }
+  .logoStrip img{ width: min(220px, 85vw); }
+}
+
+body{
+  margin:0;
+  font-family:"Open Sans",sans-serif;
+  color:#ffffff;
+  background:#000000;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:0 16px;}
+.center{text-align:center}
+a{color:inherit}
+
+/* HEADER */
+header{
+  border-bottom:1px solid #333;
+  background:#000;
+}
+.headerRow{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 0;
+}
+nav a{
+  margin:0 10px;
+  font-family:"Play",sans-serif;
+  text-decoration:none;
+  color:#fff;
+}
+.phone{
+  border:2px solid #fff;
+  padding:8px 12px;
+  border-radius:10px;
+  font-weight:800;
+  text-decoration:none;
+  color:#fff;
+}
+
+/* Header call + text buttons */
+.contactButtons{
+  display:flex;
+  gap:10px;
+  align-items:center;
+}
+
+.textBtn{
+  border:2px solid #169199;
+  padding:8px 12px;
+  border-radius:10px;
+  font-weight:800;
+  text-decoration:none;
+  color:#169199;
+  background:transparent;
+  transition:background .2s ease, color .2s ease;
+}
+
+.textBtn:hover{
+  background:#169199;
+  color:#000;
+}
+
+
+/* BANNER */
+.banner{
+  margin-top: 0;
+  position:relative;
+  background:#000;
+  overflow:hidden;
+
+  /* responsive height: grows on big screens, shrinks on small */
+  height: clamp(200px, 30vw, 340px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.banner img.bg{
+  width:100%;
+  height:100%;
+  object-fit: cover;         /* desktop/wide = full width */
+  object-position: center;
+  opacity:.85;
+}
+
+.banner .overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    180deg,
+    rgba(0,0,0,.35),
+    rgba(0,0,0,.75)
+  );
+}
+
+/* mobile/portrait = show the whole image */
+@media (max-width: 700px){
+  .banner img.bg{
+    object-fit: contain;
+  }
+  .heroLogo img{
+    height: 140px;
+  }
+  .heroTagline{
+    font-size: 16px;
+  }
+}
+
+/* HERO LOGO */
+.heroLogo{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  z-index:3;
+  padding: 12px;
+}
+
+.heroLogo img{
+  /* responsive logo size (desktop -> mobile) */
+  height: clamp(110px, 22vw, 320px);
+  width:auto;
+  max-width:90%;
+}
+
+.heroTagline{
+  margin-top:14px;
+  font-family:"Special Elite",cursive;
+  color:#fff;
+  font-size: clamp(14px, 2.4vw, 22px);
+  letter-spacing:1px;
+  text-shadow:0 3px 10px rgba(0,0,0,.8);
+}
+
+/* CONTENT */
+h2{
+  font-family:"Play",sans-serif;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#fff;
+}
+.accent{color:#169199}
+.section{padding:30px 0}
+
+/* SERVICES */
+.services{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+.serviceLink{
+  text-decoration:none;
+  color:inherit;
+  display:block;
+}
+.service{
+  border:1px solid #333;
+  border-radius:18px;
+  padding:18px;
+  text-align:center;
+  background:#0b0b0b;
+  box-shadow:0 12px 30px rgba(0,0,0,.6);
+  overflow:hidden;
+  transition:transform .25s ease, box-shadow .25s ease;
+}
+.service:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 40px rgba(0,0,0,.9);
+}
+.service img{
+  width:100%;
+  height:160px;
+  object-fit:cover;
+  border-radius:12px;
+  margin-bottom:14px;
+}
+.service h3{
+  font-family:"Play",sans-serif;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#fff;
+}
+.service p{
+  color:#ddd;
+}
+
+@media(max-width:750px){
+  .services{grid-template-columns:1fr;}
+}
+
+/* FOOTER */
+footer{
+  border-top:1px solid #333;
+  padding:26px 0;
+  margin-top:40px;
+  background:#000;
+}
+.footerGrid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
+  color:#fff;
+  align-items:start;
+
+  margin-bottom: 22px; /* space after Sat: By appointment (before divider line) */
+}
+.footerGrid a{
+  color:#fff;
+}
+
+/* Desktop alignment: left / center / right */
+.footerGrid > div:nth-child(1){ text-align:left; }
+.footerGrid > div:nth-child(2){ text-align:center; }
+.footerGrid > div:nth-child(3){ text-align:right; }
+
+/* Center the footer buttons + email under them */
+.footerButtons{
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.footerEmail{
+  margin-top:8px;
+  margin-bottom:16px; /* space after email */
+  text-align:center;
+}
+
+/* Mobile: single column + center everything */
+@media(max-width:800px){
+  .footerGrid{grid-template-columns:1fr;}
+  .footerGrid > div:nth-child(1),
+  .footerGrid > div:nth-child(2),
+  .footerGrid > div:nth-child(3){
+    text-align:center;
+  }
+}
+
+  /* --- MOBILE HEADER FIX (portrait phones) --- */
+@media (max-width: 600px){
+  .headerRow{
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 0;
+  }
+
+  .headerRow strong{
+    flex: 1 1 auto;
+    min-width: 160px;
+    font-size: 18px;
+    white-space: nowrap;
+  }
+
+  .phone{
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 10px 12px;
+    font-size: 16px;
+    border-radius: 14px;
+  }
+
+  nav{
+    order: 3;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+  }
+
+  nav a{
+    margin: 0;
+    font-size: 18px;
+    white-space: nowrap;
+  }
+}
