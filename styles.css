@@ -89,23 +89,54 @@ body{
 .center{text-align:center}
 a{color:inherit}
 
-/* HEADER */
+/* =========================
+   HEADER (UPDATED)
+   ========================= */
 header{
   border-bottom:1px solid #333;
   background:#000;
 }
+
+/* Make desktop layout: left brand / centered nav / right buttons */
 .headerRow{
   display:flex;
-  justify-content:space-between;
   align-items:center;
+  justify-content:space-between;
   padding:12px 0;
+  position:relative; /* allows centered nav without affecting left/right */
 }
-nav a{
-  margin:0 10px;
+
+/* Brand as a link */
+.brand{
+  text-decoration:none;
+  color:#fff;
+  display:inline-flex;
+  align-items:center;
+}
+
+/* Centered nav on desktop */
+.mainNav{
+  position:absolute;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.mainNav a{
+  margin:0;
   font-family:"Play",sans-serif;
   text-decoration:none;
   color:#fff;
+  white-space:nowrap;
 }
+
+/* Active link (optional) */
+.mainNav a.active{
+  color:#169199;
+}
+
 .phone{
   border:2px solid #fff;
   padding:8px 12px;
@@ -115,7 +146,7 @@ nav a{
   color:#fff;
 }
 
-/* Header call + text buttons */
+/* Header call + text buttons (right aligned desktop) */
 .contactButtons{
   display:flex;
   gap:10px;
@@ -138,8 +169,55 @@ nav a{
   color:#000;
 }
 
+/* --- MOBILE HEADER (stack + center) --- */
+@media (max-width: 600px){
+  .headerRow{
+    flex-direction:column;
+    gap:12px;
+    padding:12px 0;
+  }
 
-/* BANNER */
+  /* Brand centered on mobile */
+  .brand{
+    justify-content:center;
+    width:100%;
+    text-align:center;
+  }
+
+  /* Nav moves below and centers */
+  .mainNav{
+    position:static;
+    transform:none;
+    left:auto;
+    width:100%;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:18px;
+  }
+
+  /* Buttons centered on mobile */
+  .contactButtons{
+    justify-content:center;
+    width:100%;
+    flex-wrap:wrap;
+  }
+
+  .phone{
+    white-space: nowrap;
+    padding: 10px 12px;
+    font-size: 16px;
+    border-radius: 14px;
+  }
+
+  .mainNav a{
+    font-size: 18px;
+  }
+}
+
+/* =========================
+   HOMEPAGE BANNER (kept as-is)
+   ========================= */
 .banner{
   margin-top: 0;
   position:relative;
@@ -223,7 +301,7 @@ h2{
 .accent{color:#169199}
 .section{padding:30px 0}
 
-/* SERVICES */
+/* SERVICES (homepage cards) */
 .services{
   display:grid;
   grid-template-columns:repeat(2,1fr);
@@ -269,7 +347,9 @@ h2{
   .services{grid-template-columns:1fr;}
 }
 
-/* FOOTER */
+/* =========================
+   FOOTER
+   ========================= */
 footer{
   border-top:1px solid #333;
   padding:26px 0;
@@ -316,63 +396,23 @@ footer{
   }
 }
 
-  /* --- MOBILE HEADER FIX (portrait phones) --- */
-@media (max-width: 600px){
-  .headerRow{
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 10px 0;
-  }
-
-  .headerRow strong{
-    flex: 1 1 auto;
-    min-width: 160px;
-    font-size: 18px;
-    white-space: nowrap;
-  }
-
-  .phone{
-    flex: 0 0 auto;
-    white-space: nowrap;
-    padding: 10px 12px;
-    font-size: 16px;
-    border-radius: 14px;
-  }
-
-  nav{
-    order: 3;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    gap: 18px;
-  }
-
-  nav a{
-    margin: 0;
-    font-size: 18px;
-    white-space: nowrap;
-  }
-}
-
-/* Active nav link (used on sub-pages) */
-nav a.active{
-  color:#169199;
-}
-
-/* HERO (service pages like Junk Removal) */
-.banner{
+/* =========================
+   SERVICE PAGE HERO (renamed to avoid conflict)
+   Use: <section class="serviceBanner">
+   ========================= */
+.serviceBanner{
   position:relative;
   height:260px;
   background:#000;
   overflow:hidden;
 }
-.banner img.bg{
+.serviceBanner img.bg{
   width:100%;
   height:100%;
   object-fit:cover;
   opacity:.75;
 }
-.banner .overlay{
+.serviceBanner .overlay{
   position:absolute;
   inset:0;
   background:linear-gradient(
@@ -407,7 +447,7 @@ nav a.active{
   text-shadow:0 3px 10px rgba(0,0,0,.8);
 }
 @media(max-width:700px){
-  .banner{height:220px;}
+  .serviceBanner{height:220px;}
   .heroText h1{font-size:26px;}
   .heroText p{font-size:16px;}
 }
@@ -450,6 +490,16 @@ nav a.active{
   color:#ddd;
 }
 .pricingStrip strong{color:#fff}
+
+/* NOTE (yardwork etc.) */
+.note{
+  border:1px solid #2a2a2a;
+  border-radius:18px;
+  padding:16px 18px;
+  background:#070707;
+  color:#ddd;
+}
+.note strong{color:#fff}
 
 /* CTA */
 .cta{
