@@ -341,25 +341,19 @@ footer{
 
 </main>
 
-<footer id="contact">
-  <div class="wrap footerGrid">
-    <div>
-      <strong>PAWPAW Services</strong><br>
-      Riverton, UT
-    </div>
-    <div>
-      Phone: <a href="tel:18018200010">801-820-0010</a><br>
-      Email: <a href="mailto:info@pawpawservices.com">info@pawpawservices.com</a>
-    </div>
-    <div>
-      Mon–Fri: 8am–5pm<br>
-      Sat: By appointment
-    </div>
-  </div>
-</footer>
+<div id="footer"></div>
+
+<script>
+  fetch("footer.html")
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById("footer").innerHTML = html;
+    });
+</script>
 
 </body>
 </html>
+
 
 
 
