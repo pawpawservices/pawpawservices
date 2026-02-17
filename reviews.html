@@ -7,60 +7,19 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Play:wght@700&family=Special+Elite&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-
-<style>
-  /* Reviews hub: make entire cards clickable + premium hover */
-  .cardLink{
-    display:block;
-    text-decoration:none;
-    color:inherit;
-  }
-  .cardLink .card{
-    height:100%;
-    transition: transform .16s ease, border-color .16s ease, background .16s ease, box-shadow .16s ease;
-  }
-  .cardLink:hover .card,
-  .cardLink:focus-visible .card{
-    transform: translateY(-4px);
-    border-color: rgba(255,255,255,.28);
-    background: rgba(0,0,0,.26);
-    box-shadow: 0 14px 36px rgba(0,0,0,.35);
-    outline: none;
-  }
-  .cardCta{
-    margin-top:14px;
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-    color:#ddd;
-    font-weight:700;
-  }
-  .cardCta span{
-    display:inline-flex;
-    width:28px;
-    height:28px;
-    border-radius:10px;
-    align-items:center;
-    justify-content:center;
-    border:1px solid rgba(255,255,255,.14);
-    background: rgba(0,0,0,.22);
-  }
-</style>
 </head>
 
 <body>
 
-<!-- Shared header inject -->
 <div id="site-header"></div>
 
-<!-- HERO / BANNER -->
 <section class="serviceBanner">
   <img class="bg" src="images/reviews-hero.jpg" alt="Reviews">
   <div class="overlay"></div>
 
   <div class="heroText">
     <h1><span class="accent">Reviews</span></h1>
-    <p>Read what customers say — or leave your own.</p>
+    <p>Read customer feedback or leave a review.</p>
   </div>
 </section>
 
@@ -69,21 +28,42 @@
 <section class="section center">
   <h2>Choose an Option</h2>
   <p style="color:#ddd;max-width:760px;margin:12px auto 0;">
-    Want to see real feedback from past jobs? Check our customer reviews.
+    Want to see what people say about PAWPAW? Check our approved customer reviews.
     Worked with us recently? Leave a review — it helps a ton.
   </p>
 </section>
 
 <section class="section">
-  <div class="cards">
+  <div class="reviewsHubGrid">
 
-    <!-- Customer Reviews box -->
     <a class="cardLink" href="customerreviews.html" aria-label="View customer reviews">
       <div class="card">
         <h3><span class="accent">Customer</span> Reviews</h3>
-        <p style="color:#ddd;line-height:1.55;margin-top:10px;">
-          Browse approved reviews from real PAWPAW jobs. Quick, honest feedback
-          from homeowners and small businesses.
+        <p class="hubCopy">
+          Browse approved reviews from real jobs. Fast, honest feedback — posted after approval
+          to keep it clean and spam-free.
         </p>
-        <div class="cardCta">
-          View Reviews <spa
+        <div class="cardCta">View Reviews <span>›</span></div>
+      </div>
+    </a>
+
+    <a class="cardLink" href="reviewform.html" aria-label="Leave a review">
+      <div class="card">
+        <h3><span class="accent">Leave</span> a Review</h3>
+        <p class="hubCopy">
+          Tell us how we did. It takes a minute and helps other customers feel confident.
+          Submissions go to us first, then we post after approval.
+        </p>
+        <div class="cardCta">Leave a Review <span>›</span></div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+</main>
+
+<div id="site-footer"></div>
+<script src="includes.js"></script>
+</body>
+</html>
