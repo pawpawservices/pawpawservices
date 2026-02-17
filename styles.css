@@ -547,3 +547,140 @@ footer{
     object-position: center 28%;
   }
 }
+
+/* ===== Reviews premium layout ===== */
+
+.subtleText{
+  color:#ddd;
+  max-width:760px;
+  margin:12px auto 0;
+}
+
+/* 3-column layout: side / center / side */
+.reviewLayout{
+  display:grid;
+  grid-template-columns: 220px 1fr 220px;
+  gap:26px;
+  align-items:start;
+}
+
+/* Side buttons */
+.sidePlatform{
+  text-align:center;
+  padding:18px 14px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.14);
+  background: rgba(0,0,0,.18);
+  color:inherit;
+  text-decoration:none;
+  transition: transform .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease;
+}
+
+.sidePlatform.isLink:hover{
+  transform: translateY(-4px);
+  border-color: rgba(255,255,255,.30);
+  background: rgba(0,0,0,.28);
+}
+
+/* Big icon container */
+.platformIconLarge{
+  width:62px;
+  height:62px;
+  border-radius:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin:0 auto 12px;
+  background: rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+}
+
+/* Brand hover glows */
+.sidePlatform.isFacebook.isLink:hover{
+  box-shadow: 0 10px 26px rgba(24,119,242,.18);
+}
+.sidePlatform.isGoogle.isLink:hover{
+  box-shadow: 0 10px 26px rgba(66,133,244,.14);
+}
+
+/* Disabled */
+.sidePlatform.isDisabled{
+  opacity:.65;
+  cursor:not-allowed;
+  filter:saturate(.85);
+}
+
+/* Center card (premium wide) */
+.wideCard{
+  max-width:1100px;
+  margin:0 auto;
+  padding:28px;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,.12);
+  background: rgba(0,0,0,.18);
+}
+
+.cardHeaderRow{
+  display:flex;
+  align-items:baseline;
+  justify-content:space-between;
+  gap:12px;
+  flex-wrap:wrap;
+}
+
+.cardTitle{ margin:0; }
+.cardNote{
+  color:#bbb;
+  font-size:13px;
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:999px;
+  padding:6px 10px;
+  background: rgba(0,0,0,.22);
+}
+
+.cardBlurb{
+  color:#bbb;
+  margin:10px 0 0;
+}
+
+.thankYouMsg{
+  color:#cfe9cf;
+  margin-top:12px;
+}
+
+/* Form fields */
+.reviewForm{ margin-top:18px; }
+
+.formGrid{
+  display:grid;
+  gap:14px;
+  margin-top:6px;
+}
+
+.field{
+  width:100%;
+  padding:12px;
+  border-radius:12px;
+  border:1px solid rgba(255,255,255,.18);
+  background: rgba(0,0,0,.20);
+  color:inherit;
+}
+
+.formBtn{
+  border:none;
+  cursor:pointer;
+}
+
+.smallNote{
+  color:#bbb;
+  font-size:13px;
+}
+
+/* Mobile: stack */
+@media (max-width: 1000px){
+  .reviewLayout{
+    grid-template-columns: 1fr;
+  }
+}
+
+
