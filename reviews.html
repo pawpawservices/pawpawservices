@@ -7,6 +7,136 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Play:wght@700&family=Special+Elite&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+
+<style>
+  /* ===== Reviews page premium (self-contained) ===== */
+  .reviewsWrap { max-width: 1200px; margin: 0 auto; }
+
+  .reviewsIntro p{ color:#ddd; max-width:760px; margin:12px auto 0; }
+
+  .reviewLayout{
+    display:grid;
+    grid-template-columns: 220px 1fr 220px;
+    gap: 26px;
+    align-items: start;
+  }
+
+  .sidePlatform{
+    text-align:center;
+    padding:18px 14px;
+    border-radius:18px;
+    border:1px solid rgba(255,255,255,.14);
+    background: rgba(0,0,0,.22);
+    color:inherit;
+    text-decoration:none;
+    transition: transform .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease;
+  }
+
+  .sidePlatform.isLink:hover{
+    transform: translateY(-4px);
+    border-color: rgba(255,255,255,.30);
+    background: rgba(0,0,0,.32);
+  }
+
+  .sidePlatform.isDisabled{
+    opacity:.65;
+    cursor:not-allowed;
+    filter:saturate(.85);
+  }
+
+  .platformIconLarge{
+    width:64px;
+    height:64px;
+    border-radius:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    margin:0 auto 12px;
+    background: rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.12);
+  }
+
+  .platformTitle{ font-weight:700; color:#f1f1f1; }
+  .platformSub{ font-size:13px; color:#bbb; margin-top:6px; }
+
+  .sidePlatform.isFacebook.isLink:hover{ box-shadow: 0 12px 30px rgba(24,119,242,.22); }
+  .sidePlatform.isGoogle.isLink:hover{ box-shadow: 0 12px 30px rgba(66,133,244,.18); }
+
+  .wideCard{
+    padding:28px;
+    border-radius:18px;
+    border:1px solid rgba(255,255,255,.12);
+    background: rgba(0,0,0,.22);
+  }
+
+  .cardHeaderRow{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-bottom: 6px;
+  }
+
+  .cardTitle{ margin:0; }
+  .cardNote{
+    color:#bbb;
+    font-size:13px;
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:999px;
+    padding:6px 10px;
+    background: rgba(0,0,0,.22);
+    white-space: nowrap;
+  }
+
+  .cardBlurb{ color:#bbb; margin:10px 0 0; }
+  .thankYouMsg{ color:#cfe9cf; margin-top:12px; }
+
+  .reviewForm{ margin-top:18px; }
+
+  .formGrid{
+    display:grid;
+    gap:14px;
+  }
+
+  .field{
+    width:100%;
+    padding:12px 12px;
+    border-radius:12px;
+    border:1px solid rgba(255,255,255,.18);
+    background: rgba(0,0,0,.30);
+    color:#f1f1f1;
+    outline:none;
+    font-family: "Open Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    font-size: 15px;
+  }
+
+  .field::placeholder{ color: rgba(255,255,255,.55); }
+
+  .field:focus{
+    border-color: rgba(255,255,255,.35);
+    box-shadow: 0 0 0 4px rgba(255,255,255,.06);
+  }
+
+  select.field { appearance: auto; } /* keep native arrow */
+  textarea.field{ resize: vertical; min-height: 130px; }
+
+  .formBtn{
+    border:none;
+    cursor:pointer;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-weight: 700;
+  }
+
+  .smallNote{ color:#bbb; font-size:13px; }
+
+  @media (max-width: 1000px){
+    .reviewLayout{ grid-template-columns: 1fr; }
+    .sidePlatform{ max-width: 520px; margin: 0 auto; }
+    .wideCard{ max-width: 780px; margin: 0 auto; }
+  }
+</style>
 </head>
 
 <body>
@@ -22,104 +152,96 @@
   </div>
 </section>
 
-<main class="wrap">
+<main class="wrap reviewsWrap">
 
-<section class="section center">
-  <h2>Leave a Review</h2>
-  <p class="subtleText">
-    Leave a review here on our website, on Facebook, or soon on Google.
-  </p>
-</section>
+  <section class="section center reviewsIntro">
+    <h2>Leave a Review</h2>
+    <p>Leave a review here on our website, on Facebook, or soon on Google.</p>
+  </section>
 
-<section class="section">
-  <div class="reviewLayout">
+  <section class="section">
+    <div class="reviewLayout">
 
-    <!-- LEFT: GOOGLE -->
-    <div class="sidePlatform isGoogle isDisabled" aria-disabled="true" title="Google Business profile coming soon">
-      <div class="platformIconLarge" aria-hidden="true">
-        <!-- Google G (multicolor) -->
-        <svg viewBox="0 0 48 48" width="34" height="34" role="img" focusable="false" aria-hidden="true">
-          <path fill="#EA4335" d="M24 9.5c3.56 0 6.75 1.23 9.27 3.65l6.33-6.33C35.67 3.15 30.2 1 24 1 14.62 1 6.55 6.38 2.7 14.18l7.6 5.9C12.1 13.95 17.6 9.5 24 9.5z"/>
-          <path fill="#4285F4" d="M46.5 24.5c0-1.65-.15-3.23-.43-4.75H24v9h12.6c-.54 2.9-2.2 5.35-4.7 7l7.2 5.6c4.2-3.88 7.4-9.6 7.4-16.85z"/>
-          <path fill="#FBBC05" d="M10.3 28.08c-.52-1.56-.82-3.22-.82-4.93s.3-3.37.82-4.93l-7.6-5.9C1.25 15.47.5 19 .5 23.15s.75 7.68 2.2 10.83l7.6-5.9z"/>
-          <path fill="#34A853" d="M24 46c6.2 0 11.67-2.05 15.6-5.6l-7.2-5.6c-2 1.35-4.6 2.15-8.4 2.15-6.4 0-11.9-4.45-13.7-10.58l-7.6 5.9C6.55 40.62 14.62 46 24 46z"/>
-        </svg>
-      </div>
-      <div class="platformTitle">Google Reviews</div>
-      <div class="platformSub">Coming soon</div>
-    </div>
-
-    <!-- CENTER: FORM -->
-    <div class="wideCard">
-
-      <div class="cardHeaderRow">
-        <h3 class="cardTitle"><span class="accent">Leave</span> a Review Here</h3>
-        <div class="cardNote">Posted after approval</div>
-      </div>
-
-      <p class="cardBlurb">
-        Submitted reviews are emailed to us and posted after approval to prevent spam.
-      </p>
-
-      <p id="thankYouMsg" class="thankYouMsg" style="display:none;">
-        ✅ Thanks! Your review was submitted and will appear after approval.
-      </p>
-
-      <form action="https://formspree.io/f/mreakaje" method="POST" class="reviewForm">
-        <input type="text" name="_gotcha" style="display:none">
-        <input type="hidden" name="_subject" value="New PAWPAW Website Review">
-        <input type="hidden" name="_redirect" value="https://pawpawservices.com/reviews.html?submitted=1">
-
-        <div class="formGrid">
-          <input class="field" type="text" name="name" placeholder="Your Name" required>
-          <input class="field" type="text" name="city" placeholder="City (optional)">
-
-          <select class="field" name="rating" required>
-            <option value="" selected disabled>Select Rating</option>
-            <option value="5">★★★★★ (5)</option>
-            <option value="4">★★★★☆ (4)</option>
-            <option value="3">★★★☆☆ (3)</option>
-            <option value="2">★★☆☆☆ (2)</option>
-            <option value="1">★☆☆☆☆ (1)</option>
-          </select>
-
-          <textarea class="field" name="message" rows="5" placeholder="Your review…" required maxlength="800"></textarea>
-
-          <button type="submit" class="btn formBtn">Submit Review</button>
-
-          <div class="smallNote">Max ~800 characters (keeps reviews readable).</div>
+      <!-- LEFT: GOOGLE -->
+      <div class="sidePlatform isGoogle isDisabled" aria-disabled="true" title="Google Business profile coming soon">
+        <div class="platformIconLarge" aria-hidden="true">
+          <!-- Google G (multicolor) -->
+          <svg viewBox="0 0 48 48" width="34" height="34" aria-hidden="true">
+            <path fill="#EA4335" d="M24 9.5c3.56 0 6.75 1.23 9.27 3.65l6.33-6.33C35.67 3.15 30.2 1 24 1 14.62 1 6.55 6.38 2.7 14.18l7.6 5.9C12.1 13.95 17.6 9.5 24 9.5z"/>
+            <path fill="#4285F4" d="M46.5 24.5c0-1.65-.15-3.23-.43-4.75H24v9h12.6c-.54 2.9-2.2 5.35-4.7 7l7.2 5.6c4.2-3.88 7.4-9.6 7.4-16.85z"/>
+            <path fill="#FBBC05" d="M10.3 28.08c-.52-1.56-.82-3.22-.82-4.93s.3-3.37.82-4.93l-7.6-5.9C1.25 15.47.5 19 .5 23.15s.75 7.68 2.2 10.83l7.6-5.9z"/>
+            <path fill="#34A853" d="M24 46c6.2 0 11.67-2.05 15.6-5.6l-7.2-5.6c-2 1.35-4.6 2.15-8.4 2.15-6.4 0-11.9-4.45-13.7-10.58l-7.6 5.9C6.55 40.62 14.62 46 24 46z"/>
+          </svg>
         </div>
-      </form>
-
-    </div>
-
-    <!-- RIGHT: FACEBOOK -->
-    <a class="sidePlatform isFacebook isLink"
-       href="https://www.facebook.com/pawpawservicesllc/"
-       target="_blank"
-       rel="noopener"
-       aria-label="Leave a review on Facebook (opens in a new tab)">
-
-      <div class="platformIconLarge" aria-hidden="true">
-        <!-- Facebook icon -->
-        <svg viewBox="0 0 24 24" width="30" height="30" role="img" focusable="false" aria-hidden="true">
-          <path fill="#1877F2" d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.04 1.79-4.72 4.55-4.72 1.32 0 2.7.24 2.7.24v2.98h-1.52c-1.5 0-1.97.94-1.97 1.9v2.26h3.35l-.54 3.49h-2.81V24C19.61 23.1 24 18.1 24 12.07z"/>
-        </svg>
+        <div class="platformTitle">Google Reviews</div>
+        <div class="platformSub">Coming soon</div>
       </div>
 
-      <div class="platformTitle">Facebook Reviews</div>
-      <div class="platformSub">Post a review</div>
-    </a>
+      <!-- CENTER: FORM -->
+      <div class="wideCard">
+        <div class="cardHeaderRow">
+          <h3 class="cardTitle"><span class="accent">Leave</span> a Review Here</h3>
+          <div class="cardNote">Posted after approval</div>
+        </div>
 
-  </div>
-</section>
+        <p class="cardBlurb">
+          Submitted reviews are emailed to us and posted after approval to prevent spam.
+        </p>
+
+        <p id="thankYouMsg" class="thankYouMsg" style="display:none;">
+          ✅ Thanks! Your review was submitted and will appear after approval.
+        </p>
+
+        <form action="https://formspree.io/f/mreakaje" method="POST" class="reviewForm">
+          <input type="text" name="_gotcha" style="display:none">
+          <input type="hidden" name="_subject" value="New PAWPAW Website Review">
+          <input type="hidden" name="_redirect" value="https://pawpawservices.com/reviews.html?submitted=1">
+
+          <div class="formGrid">
+            <input class="field" type="text" name="name" placeholder="Your Name" required>
+            <input class="field" type="text" name="city" placeholder="City (optional)">
+
+            <select class="field" name="rating" required>
+              <option value="" selected disabled>Select Rating</option>
+              <option value="5">★★★★★ (5)</option>
+              <option value="4">★★★★☆ (4)</option>
+              <option value="3">★★★☆☆ (3)</option>
+              <option value="2">★★☆☆☆ (2)</option>
+              <option value="1">★☆☆☆☆ (1)</option>
+            </select>
+
+            <textarea class="field" name="message" rows="5" placeholder="Your review…" required maxlength="800"></textarea>
+
+            <button type="submit" class="btn formBtn">Submit Review</button>
+
+            <div class="smallNote">Max ~800 characters (keeps reviews readable).</div>
+          </div>
+        </form>
+      </div>
+
+      <!-- RIGHT: FACEBOOK -->
+      <a class="sidePlatform isFacebook isLink"
+         href="https://www.facebook.com/pawpawservicesllc/"
+         target="_blank"
+         rel="noopener">
+        <div class="platformIconLarge" aria-hidden="true">
+          <!-- Facebook icon -->
+          <svg viewBox="0 0 24 24" width="30" height="30" aria-hidden="true">
+            <path fill="#1877F2" d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.04 1.79-4.72 4.55-4.72 1.32 0 2.7.24 2.7.24v2.98h-1.52c-1.5 0-1.97.94-1.97 1.9v2.26h3.35l-.54 3.49h-2.81V24C19.61 23.1 24 18.1 24 12.07z"/>
+          </svg>
+        </div>
+        <div class="platformTitle">Facebook Reviews</div>
+        <div class="platformSub">Post a review</div>
+      </a>
+
+    </div>
+  </section>
 
 </main>
 
 <div id="site-footer"></div>
 
 <script src="includes.js"></script>
-
 <script>
 (function () {
   const params = new URLSearchParams(window.location.search);
