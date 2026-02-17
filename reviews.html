@@ -11,14 +11,12 @@
 
 <body>
 
-<!-- Shared header inject -->
 <div id="site-header"></div>
 
-<!-- HERO / BANNER -->
+<!-- HERO -->
 <section class="serviceBanner">
   <img class="bg" src="images/reviews-hero.jpg" alt="PAWPAW Services Reviews">
   <div class="overlay"></div>
-
   <div class="heroText">
     <h1><span class="accent">Customer</span> Reviews</h1>
     <p>Real feedback. Posted after approval.</p>
@@ -28,10 +26,33 @@
 <main class="wrap">
 
 <section class="section center">
-  <h2>Honest Work. Honest Feedback.</h2>
+  <h2>Leave a Review</h2>
   <p style="color:#ddd;max-width:760px;margin:12px auto 0;">
-    Submitted reviews are emailed to us and posted after approval.
+    Leave a review directly on our website, on Facebook, or soon on Google.
   </p>
+
+  <!-- Premium platform cards -->
+  <div class="reviewPlatforms" style="margin-top:22px;">
+
+    <!-- Google (Coming Soon) -->
+    <div class="platformCard isDisabled" aria-disabled="true">
+      <img class="platformLogo" src="images/google-logo.png" alt="Google Reviews">
+      <div class="platformText">
+        <div class="platformTitle">Google Reviews</div>
+        <div class="platformSub">Coming soon</div>
+      </div>
+    </div>
+
+    <!-- Facebook -->
+    <a class="platformCard isLink" href="https://www.facebook.com/pawpawservicesllc/" target="_blank" rel="noopener">
+      <img class="platformLogo" src="images/facebook-logo.png" alt="Facebook Reviews">
+      <div class="platformText">
+        <div class="platformTitle">Facebook Reviews</div>
+        <div class="platformSub">Post a review</div>
+      </div>
+    </a>
+
+  </div>
 </section>
 
 <!-- ===================== -->
@@ -41,27 +62,21 @@
   <div class="card" style="max-width:1000px;margin:0 auto;padding:28px;">
 
     <h3 style="margin-top:0;">
-      <span class="accent">Leave</span> a Review
+      <span class="accent">Leave</span> a Review Here
     </h3>
 
     <p style="color:#bbb;margin-top:8px;">
-      We appreciate every customer who takes the time to leave feedback.
+      Submitted reviews are emailed to us and posted after approval.
     </p>
 
-    <!-- Thank You Message -->
     <p id="thankYouMsg" style="color:#cfe9cf;margin-top:12px;display:none;">
       ✅ Thanks! Your review was submitted and will appear after approval.
     </p>
 
     <form action="https://formspree.io/f/mreakaje" method="POST" style="margin-top:18px;">
 
-      <!-- Spam honeypot -->
       <input type="text" name="_gotcha" style="display:none">
-
-      <!-- Email subject -->
       <input type="hidden" name="_subject" value="New PAWPAW Website Review">
-
-      <!-- Redirect back -->
       <input type="hidden" name="_redirect" value="https://pawpawservices.com/reviews.html?submitted=1">
 
       <div style="display:grid;gap:16px;">
@@ -82,19 +97,22 @@
           <option value="1">★☆☆☆☆ (1)</option>
         </select>
 
-        <textarea name="message" rows="5" placeholder="Your review..." required
+        <textarea name="message" rows="5" placeholder="Your review..." required maxlength="800"
           style="padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.20);color:inherit;"></textarea>
 
         <button type="submit" class="btn" style="border:none;cursor:pointer;">
           Submit Review
         </button>
 
+        <div style="color:#bbb;font-size:13px;">
+          Max ~800 characters (keeps reviews readable).
+        </div>
+
       </div>
     </form>
 
   </div>
 </section>
-
 
 <!-- ===================== -->
 <!-- BOX 2 – PAST REVIEWS -->
@@ -133,20 +151,18 @@
 
 </main>
 
-<!-- Shared footer inject -->
 <div id="site-footer"></div>
 
 <script src="includes.js"></script>
 
 <script>
-  // Show thank-you message if redirected back with ?submitted=1
-  (function () {
-    const params = new URLSearchParams(window.location.search);
-    if (params.get("submitted") === "1") {
-      const el = document.getElementById("thankYouMsg");
-      if (el) el.style.display = "block";
-    }
-  })();
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("submitted") === "1") {
+    const el = document.getElementById("thankYouMsg");
+    if (el) el.style.display = "block";
+  }
+})();
 </script>
 
 </body>
