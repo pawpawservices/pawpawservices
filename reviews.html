@@ -30,19 +30,85 @@
 <section class="section center">
   <h2>Honest Work. Honest Feedback.</h2>
   <p style="color:#ddd;max-width:760px;margin:12px auto 0;">
-    Every review is submitted directly through our site and approved before posting.
+    Submitted reviews are emailed to us and posted after approval.
   </p>
 </section>
 
+<!-- ===================== -->
+<!-- BOX 1 – LEAVE REVIEW -->
+<!-- ===================== -->
 <section class="section">
-  <div class="cards">
+  <div class="card" style="max-width:1000px;margin:0 auto;padding:28px;">
 
-    <!-- BOX 1: PAST REVIEWS -->
-    <div class="card">
-      <h3><span class="accent">Past</span> Reviews</h3>
+    <h3 style="margin-top:0;">
+      <span class="accent">Leave</span> a Review
+    </h3>
 
-      <!-- Replace these with approved reviews -->
-      <div style="margin-top:14px;color:#ddd;line-height:1.5;">
+    <p style="color:#bbb;margin-top:8px;">
+      We appreciate every customer who takes the time to leave feedback.
+    </p>
+
+    <!-- Thank You Message -->
+    <p id="thankYouMsg" style="color:#cfe9cf;margin-top:12px;display:none;">
+      ✅ Thanks! Your review was submitted and will appear after approval.
+    </p>
+
+    <form action="https://formspree.io/f/mreakaje" method="POST" style="margin-top:18px;">
+
+      <!-- Spam honeypot -->
+      <input type="text" name="_gotcha" style="display:none">
+
+      <!-- Email subject -->
+      <input type="hidden" name="_subject" value="New PAWPAW Website Review">
+
+      <!-- Redirect back -->
+      <input type="hidden" name="_redirect" value="https://pawpawservices.com/reviews.html?submitted=1">
+
+      <div style="display:grid;gap:16px;">
+
+        <input type="text" name="name" placeholder="Your Name" required
+          style="padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.20);color:inherit;">
+
+        <input type="text" name="city" placeholder="City (optional)"
+          style="padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.20);color:inherit;">
+
+        <select name="rating" required
+          style="padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.20);color:inherit;">
+          <option value="" selected disabled>Select Rating</option>
+          <option value="5">★★★★★ (5)</option>
+          <option value="4">★★★★☆ (4)</option>
+          <option value="3">★★★☆☆ (3)</option>
+          <option value="2">★★☆☆☆ (2)</option>
+          <option value="1">★☆☆☆☆ (1)</option>
+        </select>
+
+        <textarea name="message" rows="5" placeholder="Your review..." required
+          style="padding:12px;border-radius:12px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.20);color:inherit;"></textarea>
+
+        <button type="submit" class="btn" style="border:none;cursor:pointer;">
+          Submit Review
+        </button>
+
+      </div>
+    </form>
+
+  </div>
+</section>
+
+
+<!-- ===================== -->
+<!-- BOX 2 – PAST REVIEWS -->
+<!-- ===================== -->
+<section class="section">
+  <div class="card" style="max-width:1000px;margin:0 auto;padding:28px;">
+
+    <h3 style="margin-top:0;">
+      <span class="accent">Past</span> Reviews
+    </h3>
+
+    <div style="margin-top:18px;color:#ddd;line-height:1.6;">
+
+      <div>
         <strong>★★★★★</strong><br>
         Fast, clean, and professional. Would hire again.
         <div style="color:#bbb;margin-top:6px;">
@@ -50,9 +116,9 @@
         </div>
       </div>
 
-      <hr style="margin:18px 0;border-color:rgba(255,255,255,.15);">
+      <hr style="margin:22px 0;border-color:rgba(255,255,255,.15);">
 
-      <div style="color:#ddd;line-height:1.5;">
+      <div>
         <strong>★★★★★</strong><br>
         Showed up when they said and fixed everything right the first time.
         <div style="color:#bbb;margin-top:6px;">
@@ -60,113 +126,6 @@
         </div>
       </div>
 
-          <div style="margin-top:14px;color:#ddd;line-height:1.5;">
-        <strong>★★★★★</strong><br>
-        Fast, clean, and professional. Would hire again.
-        <div style="color:#bbb;margin-top:6px;">
-          — Customer Name (City)
-        </div>
-      </div>
-
-      <hr style="margin:18px 0;border-color:rgba(255,255,255,.15);">
-
-      <div style="color:#ddd;line-height:1.5;">
-        <strong>★★★★★</strong><br>
-        Showed up when they said and fixed everything right the first time.
-        <div style="color:#bbb;margin-top:6px;">
-          — Customer Name (City)
-        </div>
-      </div>
-
-          <div style="margin-top:14px;color:#ddd;line-height:1.5;">
-        <strong>★★★★★</strong><br>
-        Fast, clean, and professional. Would hire again.
-        <div style="color:#bbb;margin-top:6px;">
-          — Customer Name (City)
-        </div>
-      </div>
-
-      <hr style="margin:18px 0;border-color:rgba(255,255,255,.15);">
-
-      <div style="color:#ddd;line-height:1.5;">
-        <strong>★★★★★</strong><br>
-        Showed up when they said and fixed everything right the first time.
-        <div style="color:#bbb;margin-top:6px;">
-          — Customer Name (City)
-        </div>
-      </div>
-
-          <div style="margin-top:14px;color:#ddd;line-height:1.5;">
-        <strong>★★★★★</strong><br>
-        Fast, clean, and professional. Would hire again.
-        <div style="color:#bbb;margin-top:6px;">
-          — Customer Name (City)
-        </div>
-      </div>
-
-      <hr style="margin:18px 0;border-color:rgba(255,255,255,.15);">
-
-      <div style="color:#ddd;line-height:1.5;">
-        <strong>★★★★★</strong><br>
-        Showed up when they said and fixed everything right the first time.
-        <div style="color:#bbb;margin-top:6px;">
-          — Customer Name (City)
-        </div>
-      </div>
-
-    </div>
-
-
-    <!-- BOX 2: LEAVE A REVIEW -->
-    <div class="card">
-      <h3><span class="accent">Leave</span> a Review</h3>
-      <p style="color:#bbb;margin-top:10px;">
-        Submitted reviews are emailed to us and posted after approval.
-      </p>
-
-      <!-- Thank you message -->
-      <p id="thankYouMsg" style="color:#cfe9cf;margin-top:12px;display:none;">
-        ✅ Thanks! Your review was submitted and will appear after approval.
-      </p>
-
-      <form action="https://formspree.io/f/mreakaje" method="POST" style="margin-top:14px;">
-
-        <!-- Spam honeypot -->
-        <input type="text" name="_gotcha" style="display:none">
-
-        <!-- Email subject -->
-        <input type="hidden" name="_subject" value="New PAWPAW Website Review">
-
-        <!-- Redirect back -->
-        <input type="hidden" name="_redirect" value="https://pawpawservices.com/reviews.html?submitted=1">
-
-        <div style="display:grid;gap:12px;">
-
-          <input type="text" name="name" placeholder="Name" required
-            style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.20);color:inherit;">
-
-          <input type="text" name="city" placeholder="City (optional)"
-            style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.20);color:inherit;">
-
-          <select name="rating" required
-            style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.20);color:inherit;">
-            <option value="" selected disabled>Select Rating</option>
-            <option value="5">★★★★★ (5)</option>
-            <option value="4">★★★★☆ (4)</option>
-            <option value="3">★★★☆☆ (3)</option>
-            <option value="2">★★☆☆☆ (2)</option>
-            <option value="1">★☆☆☆☆ (1)</option>
-          </select>
-
-          <textarea name="message" rows="4" placeholder="Your review..." required
-            style="padding:10px;border-radius:10px;border:1px solid rgba(255,255,255,.18);background:rgba(0,0,0,.20);color:inherit;"></textarea>
-
-          <button type="submit" class="btn" style="border:none;cursor:pointer;">
-            Submit Review
-          </button>
-
-        </div>
-      </form>
     </div>
 
   </div>
